@@ -70,7 +70,7 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco: \n" +
+        return "***** Endereco ***** \n" +
                 "Cep= " + cep + "\n" +
                 "Logradouro= " + logradouro + "\n" +
                 "Bairro= " + bairro + "\n" +

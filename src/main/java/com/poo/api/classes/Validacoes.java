@@ -24,35 +24,6 @@ public class Validacoes {
         if (cpf.length() != 11) {
             return false;
         }
-
-        // Verificação dos dígitos verificadores
-        int[] digits = new int[11];
-        for (int i = 0; i < 11; i++) {
-            digits[i] = Integer.parseInt(cpf.substring(i, i + 1));
-        }
-
-        // Primeiro dígito verificador
-        int sum = 0;
-        for (int i = 0; i < 9; i++) {
-            sum += digits[i] * (10 - i);
-        }
-        int mod = sum % 11;
-        int expectedDigit1 = (mod < 2) ? 0 : (11 - mod);
-        if (digits[9] != expectedDigit1) {
-            return false;
-        }
-
-        // Segundo dígito verificador
-        sum = 0;
-        for (int i = 0; i < 10; i++) {
-            sum += digits[i] * (11 - i);
-        }
-        mod = sum % 11;
-        int expectedDigit2 = (mod < 2) ? 0 : (11 - mod);
-        if (digits[10] != expectedDigit2) {
-            return false;
-        }
-
         return true;
     }
 
